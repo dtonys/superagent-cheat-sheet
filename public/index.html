@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/main.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/superagent.js" ></script>
+    <script src="/main.js" ></script>
+  </head>
+  <body>
+    <div class="content-region">
+      <form method="get" action="/get" target="my_iframe">
+        <fieldset>
+          <legend>get</legend>
+          <label>input-1</label>
+          <input type="text" name="input-1" class="w50">
+          <br />
+          <label>input-2</label>
+          <input type="text" name="input-2" class="w50">
+          <br />
+          <label>set cookie</label>
+          <input type="checkbox" name="set-cookies" value="true">
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+      <form method="post" action="/post" target="my_iframe">
+        <fieldset>
+          <legend>post</legend>
+          <label>input-1</label>
+          <input type="text" name="input-1" class="w50">
+          <br />
+          <label>input-2</label>
+          <input type="text" name="input-2" class="w50">
+          <br />
+          <label>set cookie</label>
+          <input type="checkbox" name="set-cookies" value="true">
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+      <form method="post" action="/post-multipart" target="my_iframe" enctype="multipart/form-data">
+        <fieldset>
+          <legend>post-multipart</legend>
+          <label>input-1</label>
+          <input type="text" name="input-1" class="w50">
+          <br />
+          <label>file-2</label>
+          <input type="file" name="file-2">
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+      <form class="ajaxGetForm">
+        <fieldset>
+          <legend>ajax-get</legend>
+          <label>input-1</label>
+          <input type="text" name="input-1" class="w50">
+          <br />
+          <label>input-2</label>
+          <input type="text" name="input-2" class="w50">
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+      <form class="ajaxPostForm">
+        <fieldset>
+          <legend>ajax-post</legend>
+          <label>input-1</label>
+          <input type="text" name="input-1" class="w50">
+          <br />
+          <label>input-2</label>
+          <input type="text" name="input-2" class="w50">
+          <br />
+          <label>set cookie</label>
+          <input type="checkbox" name="set-cookies" value="true">
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+      <form class="ajaxPutForm">
+        <fieldset>
+          <legend>ajax-put</legend>
+          <label>input-1</label>
+          <input type="text" name="input-1" class="w50">
+          <br />
+          <label>input-2</label>
+          <input type="text" name="input-2" class="w50">
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+      <form class="ajaxDeleteForm">
+        <fieldset>
+          <legend>ajax-delete</legend>
+          <label>input-1</label>
+          <input type="text" name="input-1" class="w50">
+          <br />
+          <label>input-2</label>
+          <input type="text" name="input-2" class="w50">
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+      <form class="ajaxMultipartPostForm">
+        <fieldset>
+          <legend>ajax-post-multipart</legend>
+          <label>input-1</label>
+          <input type="text" name="input-1" class="w50">
+          <br />
+          <label>file-2</label>
+          <input type="file" name="file-2">
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+
+      <form method="get" class="apiProxyGetForm">
+        <fieldset>
+          <legend>api-proxy-get</legend>
+          <label>input-1</label>
+          <input type="text" name="input-1" class="w50">
+          <br />
+          <label>input-2</label>
+          <input type="text" name="input-2" class="w50">
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+
+      <form method="get" class="apiProxyPostForm">
+        <fieldset>
+          <legend>api-proxy-post</legend>
+          <label>input-1</label>
+          <input type="text" name="input-1" class="w50">
+          <br />
+          <label>input-2</label>
+          <input type="text" name="input-2" class="w50">
+          <br />
+          <label>set cookie</label>
+          <input type="checkbox" name="set-cookies" value="true">
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+
+      <form method="get" class="apiErrorForm">
+        <fieldset>
+          <legend>api-error</legend>
+          <label>Select Error Type</label>
+          <br>
+          <input type="radio" name="errorPath" value="api-404-error" checked> api-404-error <br>
+          <input type="radio" name="errorPath" value="api-500-error"> api-500-error <br>
+          <input type="radio" name="errorPath" value="api-timeout-error"> api-timeout-error <br>
+          <input type="radio" name="errorPath" value="api-internal-error"> api-internal-error <br>
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+
+      <form method="get" class="apiProxyErrorForm">
+        <fieldset>
+          <legend>api-proxy-error</legend>
+          <label>Select Error Type</label>
+          <br>
+          <input type="radio" name="errorPath" value="api-404-error" checked> api-404-error <br>
+          <input type="radio" name="errorPath" value="api-500-error"> api-500-error <br>
+          <input type="radio" name="errorPath" value="api-timeout-error"> api-timeout-error <br>
+          <input type="radio" name="errorPath" value="api-internal-error"> api-internal-error <br>
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+
+      <form method="get" class="apiRedirectForm">
+        <fieldset>
+          <legend>api-redirect</legend>
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+
+      <form method="get" class="apiProxyRedirectForm">
+        <fieldset>
+          <legend>api-proxy-redirect</legend>
+          <br />
+          <button>Submit</button>
+        </fieldset>
+      </form>
+
+    </div>
+    <div class="iframe-region">
+      <iframe
+        name="my_iframe"
+        frameborder="0"
+        class="iframe"
+        ></iframe>
+    </div>
+  </body>
+</html>

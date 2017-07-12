@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  overflow: hidden;
+}
+.content-region {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 50%;
+  overflow: auto;
+  padding: 10px;
+}
+.iframe-region {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  right: 0;
+  border-left: solid black 2px;
+}
+
+.iframe-wrap {
+  margin-top: 32px;
+  height: 100%;
+  width: 100%;
+}
+.iframe {
+  height: 100%;
+  width: 100%;
+}
+form {
+  margin-bottom: 10px;
+}
+.row {
+}
