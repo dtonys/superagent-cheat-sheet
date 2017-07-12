@@ -26,3 +26,5 @@ Problem cases:
 
 - Transferring the `Set-Cookie` headers from an external server to the browser.
 
+![webapp](https://user-images.githubusercontent.com/899077/28143357-f9b11062-6719-11e7-8d95-53530e50d9f9.png)
+
